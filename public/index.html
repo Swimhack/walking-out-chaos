@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Transform mental chaos into organized clarity through AI-powered assessments and guided transformations">
+    <meta name="keywords" content="mental wellness, chaos assessment, transformation, mindfulness, organization">
+    <meta name="author" content="Strickland Technology Web Design">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Walking Out of Chaos - Mental Wellness Application">
+    <meta property="og:description" content="Transform mental chaos into organized clarity through AI-powered assessments">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://walking-out-chaos.netlify.app">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Walking Out of Chaos">
+    <meta name="twitter:description" content="Transform mental chaos into organized clarity">
+    
+    <title>Walking Out of Chaos - Mental Wellness</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/chaos-assessment.css">
+    <link rel="stylesheet" href="/css/transformations.css">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#3B82F6">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/js/app.js" as="script">
+    <link rel="preload" href="/css/main.css" as="style">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h2>Walking Out of Chaos</h2>
+            <p>Preparing your transformation journey...</p>
+        </div>
+    </div>
+
+    <!-- Main Application Container -->
+    <div id="app" class="app-container" style="display: none;">
+        <!-- Navigation Header -->
+        <header class="app-header">
+            <nav class="navbar">
+                <div class="nav-brand">
+                    <h1>Walking Out of Chaos</h1>
+                    <span class="tagline">Transform chaos into clarity</span>
+                </div>
+                <div class="nav-menu">
+                    <button id="nav-home" class="nav-btn active">Home</button>
+                    <button id="nav-assessment" class="nav-btn">Assessment</button>
+                    <button id="nav-transformations" class="nav-btn">Transformations</button>
+                    <button id="nav-progress" class="nav-btn">Progress</button>
+                </div>
+                <div class="nav-mobile-toggle">
+                    <button id="mobile-menu-toggle">☰</button>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Home Page -->
+            <section id="home-page" class="page active">
+                <div class="hero-section">
+                    <div class="hero-content">
+                        <h2>Transform Mental Chaos into Organized Clarity</h2>
+                        <p>Discover your chaos level, understand your patterns, and embark on guided transformations designed to bring peace and organization to your mind.</p>
+                        <div class="hero-actions">
+                            <button id="start-assessment-btn" class="btn btn-primary btn-large">
+                                Start Your Assessment
+                            </button>
+                            <button id="explore-transformations-btn" class="btn btn-secondary btn-large">
+                                Explore Transformations
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="chaos-visual">
+                            <div class="chaos-particles"></div>
+                            <div class="clarity-center"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features Section -->
+                <div class="features-section">
+                    <h3>How It Works</h3>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">📊</div>
+                            <h4>Chaos Assessment</h4>
+                            <p>Take our quick 6-question assessment to understand your current mental state and chaos level.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🎯</div>
+                            <h4>Personalized Insights</h4>
+                            <p>Receive AI-powered insights and recommendations based on your unique assessment results.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🧘</div>
+                            <h4>Guided Transformations</h4>
+                            <p>Choose from mindfulness, organization, or energy-boosting transformations tailored to your needs.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📈</div>
+                            <h4>Track Progress</h4>
+                            <p>Monitor your journey with visual progress tracking and celebrate your improvements.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Assessment Page -->
+            <section id="assessment-page" class="page">
+                <div class="assessment-container">
+                    <div class="assessment-header">
+                        <h2>Chaos Level Assessment</h2>
+                        <p>Answer these questions honestly to understand your current mental state.</p>
+                        <div class="progress-bar">
+                            <div id="assessment-progress" class="progress-fill"></div>
+                        </div>
+                        <span id="question-counter">Question 1 of 6</span>
+                    </div>
+
+                    <div id="assessment-form" class="assessment-form">
+                        <!-- Questions will be loaded dynamically -->
+                    </div>
+
+                    <div id="assessment-results" class="assessment-results" style="display: none;">
+                        <div class="results-header">
+                            <h3>Your Chaos Assessment Results</h3>
+                        </div>
+                        <div class="chaos-score">
+                            <div class="score-circle">
+                                <span id="chaos-score-value">0</span>
+                                <span class="score-label">Chaos Level</span>
+                            </div>
+                        </div>
+                        <div id="chaos-interpretation" class="interpretation">
+                            <!-- Results will be populated here -->
+                        </div>
+                        <div class="results-actions">
+                            <button id="view-transformations-btn" class="btn btn-primary">
+                                View Recommended Transformations
+                            </button>
+                            <button id="retake-assessment-btn" class="btn btn-secondary">
+                                Retake Assessment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Transformations Page -->
+            <section id="transformations-page" class="page">
+                <div class="transformations-container">
+                    <div class="transformations-header">
+                        <h2>Transformation Flows</h2>
+                        <p>Choose a transformation that resonates with your current needs.</p>
+                    </div>
+
+                    <div class="transformations-grid">
+                        <div class="transformation-card" data-transformation="mindfulness">
+                            <div class="transformation-icon">🧘‍♀️</div>
+                            <h3>Mindful Moments</h3>
+                            <p>Guided breathing and mindfulness exercises to center your thoughts and find inner peace.</p>
+                            <div class="transformation-stats">
+                                <span>⏱️ 10-15 minutes</span>
+                                <span>🎯 Focus & Clarity</span>
+                            </div>
+                            <button class="btn btn-primary start-transformation-btn">Start Flow</button>
+                        </div>
+
+                        <div class="transformation-card" data-transformation="organization">
+                            <div class="transformation-icon">📋</div>
+                            <h3>Mind Decluttering</h3>
+                            <p>Organize your thoughts and priorities with structured exercises and planning tools.</p>
+                            <div class="transformation-stats">
+                                <span>⏱️ 15-20 minutes</span>
+                                <span>🎯 Organization & Planning</span>
+                            </div>
+                            <button class="btn btn-primary start-transformation-btn">Start Flow</button>
+                        </div>
+
+                        <div class="transformation-card" data-transformation="energy">
+                            <div class="transformation-icon">⚡</div>
+                            <h3>Energy Boost</h3>
+                            <p>Revitalize your mental energy with dynamic exercises and motivational guidance.</p>
+                            <div class="transformation-stats">
+                                <span>⏱️ 8-12 minutes</span>
+                                <span>🎯 Energy & Motivation</span>
+                            </div>
+                            <button class="btn btn-primary start-transformation-btn">Start Flow</button>
+                        </div>
+                    </div>
+
+                    <!-- Active Transformation Container -->
+                    <div id="active-transformation" class="active-transformation" style="display: none;">
+                        <div class="transformation-header">
+                            <button id="close-transformation" class="close-btn">×</button>
+                            <h3 id="transformation-title">Transformation Flow</h3>
+                            <div class="transformation-progress">
+                                <div id="transformation-progress-bar" class="progress-fill"></div>
+                            </div>
+                        </div>
+                        <div id="transformation-content" class="transformation-content">
+                            <!-- Dynamic content will be loaded here -->
+                        </div>
+                        <div class="transformation-controls">
+                            <button id="prev-step" class="btn btn-secondary" disabled>Previous</button>
+                            <button id="next-step" class="btn btn-primary">Next</button>
+                            <button id="complete-transformation" class="btn btn-success" style="display: none;">Complete</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Progress Page -->
+            <section id="progress-page" class="page">
+                <div class="progress-container">
+                    <div class="progress-header">
+                        <h2>Your Progress Journey</h2>
+                        <p>Track your transformation journey and celebrate your achievements.</p>
+                    </div>
+
+                    <div class="progress-stats">
+                        <div class="stat-card">
+                            <div class="stat-value" id="total-assessments">0</div>
+                            <div class="stat-label">Assessments</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="total-transformations">0</div>
+                            <div class="stat-label">Transformations</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="average-chaos-score">0</div>
+                            <div class="stat-label">Avg Chaos Level</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="streak-days">0</div>
+                            <div class="stat-label">Day Streak</div>
+                        </div>
+                    </div>
+
+                    <div class="progress-charts">
+                        <div class="chart-container">
+                            <h3>Chaos Level Trend</h3>
+                            <canvas id="chaos-trend-chart" width="400" height="200"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Transformation Activity</h3>
+                            <canvas id="activity-chart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="recent-activity">
+                        <h3>Recent Activity</h3>
+                        <div id="activity-list" class="activity-list">
+                            <!-- Recent activities will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="footer-content">
+                <p>&copy; 2025 Walking Out of Chaos. Created by <a href="https://stricklandtechnology.net" target="_blank">Strickland Technology Web Design</a></p>
+                <div class="footer-links">
+                    <a href="#privacy">Privacy</a>
+                    <a href="#terms">Terms</a>
+                    <a href="#support">Support</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Error Toast Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- JavaScript Files -->
+    <script src="/js/app.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/chaos-assessment.js"></script>
+    <script src="/js/transformations.js"></script>
+    <script src="/js/progress.js"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(function(err) {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
