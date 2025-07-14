@@ -1,0 +1,41 @@
+{
+  "name": "walking-out-chaos",
+  "version": "1.0.0",
+  "description": "Transform mental chaos into organized clarity through AI-powered assessments and interactive transformation flows",
+  "main": "public/index.html",
+  "scripts": {
+    "dev": "php -S localhost:8000 -t public/",
+    "build": "echo 'Static build - no compilation needed'",
+    "test": "echo 'Tests would go here'",
+    "lint": "echo 'Linting would go here'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Swimhack/walking-out-chaos.git"
+  },
+  "keywords": [
+    "mental-wellness",
+    "chaos-assessment",
+    "transformation-flows",
+    "ai-powered",
+    "mental-health",
+    "productivity",
+    "mindfulness",
+    "stress-management"
+  ],
+  "author": "Agent Swarm Development Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Swimhack/walking-out-chaos/issues"
+  },
+  "homepage": "https://github.com/Swimhack/walking-out-chaos#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "netlify": {
+    "functions": "./netlify/functions",
+    "publish": "./public"
+  }
+}
